@@ -1,0 +1,6 @@
+*.docx
+*.pdf
+*.pptx
+*.DS_Store
+AI 课程/
+.claude/
