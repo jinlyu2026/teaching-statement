@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jin Lyu — Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #fafaf8;
+    --card: #ffffff;
+    --text: #1f1f1f;
+    --text-secondary: #5c5c5c;
+    --text-muted: #8c8273;
+    --accent: #9a7d4e;
+    --accent-light: #f5f0e8;
+    --border: #e8e3db;
+    --rule: #e0dbd2;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 52px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #1a1a1a;
+    line-height: 1.1;
+  }
+
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .contact-bar span {
+    white-space: nowrap;
+  }
+  .contact-bar .sep {
+    color: #ccc;
+  }
+
+  /* ── Summary ── */
+  .summary {
+    font-size: 15px;
+    color: #3a3a3a;
+    line-height: 1.78;
+    margin-bottom: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 42px;
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  /* ── Entry ── */
+  .entry {
+    margin-bottom: 28px;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+
+  .entry-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .entry-sub {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3a3a3a;
+  }
+
+  .entry-date {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .entry-location {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .entry ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 7px;
+  }
+
+  .entry li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 4px;
+    line-height: 1.65;
+  }
+
+  .entry li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #c4b99a;
+  }
+
+  /* ── Tag badge ── */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 2px 10px;
+    border-radius: 2px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ── Skills ── */
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-chip {
+    font-size: 12px;
+    color: #555;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 5px 14px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* ── Two-column ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 40px;
+  }
+
+  @media (max-width: 680px) {
+    .two-col { grid-template-columns: 1fr; }
+    .page { padding: 40px 20px 56px; }
+    h1 { font-size: 34px; }
+    .entry-header { flex-direction: column; }
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; }
+    .page { max-width: 100%; padding: 0; }
+    .skill-chip { border-color: #ddd; }
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <div class="header">
+    <h1>Jin Lyu</h1>
+    <div class="contact-bar">
+      <span>+86 139-1616-2367</span><span class="sep">|</span>
+      <span>jin_lyu@163.com</span><span class="sep">|</span>
+      <span>Shanghai, China</span><span class="sep">|</span>
+      <span>Bilingual: English &amp; Mandarin</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SUMMARY ═══════════════ -->
+  <div class="summary">
+    Bilingual (English/Mandarin) mental health clinician and experienced university instructor with over a decade of teaching at Fudan University, where I developed and taught the institution's <strong>Golden Course</strong> in Happiness Psychology. MSW-trained at Washington University in St. Louis with 600+ clinical hours integrating DBT, CBT, and evidence-based interventions. Innovator in AI-powered mental health—built 20+ AI therapeutic tools, developed an original theoretical framework for AI-assisted psychological intervention, and active presenter at mental health forums across China and the United States. Currently delivering professional development training for K–12 educators. Seeking to bring an interdisciplinary, practice-grounded perspective to CIIS as an Adjunct Professor in Applied Psychology.
+  </div>
+
+  <!-- ═══════════════ EDUCATION ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Education</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Master of Social Work (MSW)</span>
+        <span class="entry-date">Aug 2025</span>
+      </div>
+      <div class="entry-sub">Washington University in St. Louis <span class="entry-location">— St. Louis, MO</span></div>
+      <ul><li>Mental Health Concentration</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Master of Social Policy (MSP)</span>
+        <span class="entry-date">Aug 2023</span>
+      </div>
+      <div class="entry-sub">Washington University in St. Louis <span class="entry-location">— St. Louis, MO</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Master of Management</span>
+        <span class="entry-date">Jun 2009</span>
+      </div>
+      <div class="entry-sub">Fudan University <span class="entry-location">— Shanghai</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Bachelor of Science, Environmental Science</span>
+        <span class="entry-date">Jun 2005</span>
+      </div>
+      <div class="entry-sub">Fudan University <span class="entry-location">— Shanghai</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ TEACHING ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Teaching &amp; Training Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Lecturer &amp; Education Consultant</span>
+        <span class="entry-date">Aug 2025 – Present</span>
+      </div>
+      <div class="entry-sub">Shanghai &amp; Yangtze River Delta</div>
+      <ul>
+        <li>Developed and facilitated professional development training for K–12 educators covering educational psychology, mental health, SEL, parent-school communication, and classroom practice strategies.</li>
+        <li>Led AI-empowered education workshops on intelligent agent development, vibe coding, teacher AI literacy, and AI-assisted curriculum design.</li>
+        <li>Collaborating with mental health organizations to co-develop AI-empowered training workshop series, leading curriculum design and content development.</li>
+        <li>Built 20+ AI-powered mental health products including intelligent companion agents, DBT-based self-soothing systems, and exposure therapy practice tools—deployed in workshop settings.</li>
+        <li>Developed the "Three-Layer Situational Intervention Framework" (Context Build → Personalize Intervene → Passive Monitor), an original model for AI integration in mental health practice.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Lecturer &amp; Course Developer <span class="tag">Golden Course</span></span>
+        <span class="entry-date">Sep 2015 – Jun 2022</span>
+      </div>
+      <div class="entry-sub">Fudan University <span class="entry-location">— Shanghai</span></div>
+      <ul>
+        <li>Designed and taught <strong>Psychology of Happiness</strong>, designated as a Fudan University "Golden Course"—the institution's highest course distinction—taught continuously for six academic years.</li>
+        <li>Taught <strong>Mental Health and Development for College Students</strong> for twelve consecutive semesters, consistently receiving high student evaluations.</li>
+        <li>Developed and delivered <strong>Career Development for College Students</strong>, integrating systems thinking and strengths-based approaches.</li>
+        <li>Twice nominated for the Best Teacher Award at Fudan University (2011, 2013).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CLINICAL ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Clinical &amp; Counseling Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Counselor Intern</span>
+        <span class="entry-date">Aug 2024 – May 2025</span>
+      </div>
+      <div class="entry-sub">Webster University, Counseling &amp; Life Development (CLD) <span class="entry-location">— St. Louis, MO</span></div>
+      <ul>
+        <li>Completed 600+ clinical hours delivering individual therapy, managing a growing caseload and providing evidence-based interventions including DBT and CBT.</li>
+        <li>Co-facilitated DBT skills groups for college students—designing and leading psychoeducational sessions on distress tolerance, emotion regulation, and interpersonal effectiveness.</li>
+        <li>Independently led weekly mindfulness activities, guiding participants through core DBT practices to enhance emotional regulation.</li>
+        <li>Awarded the Equity Mental Health Fellowship for excellence in culturally responsive DBT practice, and the Dr. Clara Louise Meyers Outstanding Practicum Student Award.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">MSW Practicum Student</span>
+        <span class="entry-date">Jan 2024 – Jun 2024</span>
+      </div>
+      <div class="entry-sub">Artists First St. Louis <span class="entry-location">— St. Louis, MO</span></div>
+      <ul>
+        <li>Conducted cross-cultural research exploring Eastern cultural influences on Western artists, culminating in a documentary-style interview portfolio.</li>
+        <li>Facilitated expressive arts programs for individuals with disabilities and veterans, enhancing cognitive and emotional rehabilitation.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Therapist</span>
+        <span class="entry-date">Aug 2010 – Jul 2022</span>
+      </div>
+      <div class="entry-sub">Fudan University, Student Mental Health Center <span class="entry-location">— Shanghai</span></div>
+      <ul>
+        <li>Provided 1:1 counseling to undergraduate and graduate students using both short-term and long-term (up to 2-year) therapeutic frameworks.</li>
+        <li>Conducted suicide risk screening and assessment, delivering crisis intervention for high-acuity situations.</li>
+        <li>Received weekly individual clinical supervision and team-based case consultation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ ADMIN ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Administrative &amp; Leadership Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Director, Office of Student Affairs</span>
+        <span class="entry-date">Jul 2018 – Jul 2022</span>
+      </div>
+      <div class="entry-sub">Fudan University, Dept. of Environmental Science &amp; Engineering <span class="entry-location">— Shanghai</span></div>
+      <ul>
+        <li>Led the Office of Student Affairs, providing comprehensive support for student well-being including financial aid, mental health referrals, and academic advising.</li>
+        <li>Managed critical situations including suicide risk assessment and crisis intervention.</li>
+        <li>Developed and implemented strategies to address students' financial and mental health needs.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PRESENTATIONS + CERTS ═══════════════ -->
+  <div class="two-col">
+
+    <div class="section">
+      <div class="section-title">Professional Presentations</div>
+      <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Guest Speaker, Li Zhengyun Studio — Shanghai Municipal Psychology Expert Studio (Sep 2025)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Presenter, Ohio College Counseling Association (OCCA) Virtual Conference (May 2024)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Keynote Speaker, Webinar of First Education (2022)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Lecturer, First College Students Mental Health Education Curriculum Construction Forum (2022)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Keynote Speaker, Workshop for College Mental Health Education Shanghai (2021)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Lecturer, Annual Conference of College Psychological Counseling Association of Shanghai (2020)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Certifications &amp; Licensures</div>
+      <ul style="list-style: none; padding: 0; display: grid; gap: 8px;">
+        <li style="font-size: 13.5px; color: #444; padding: 0;"><strong>Licensed Master Social Worker (LMSW)</strong></li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Problem-Solving Brief Family Therapy Training (2020–2022) — Brief Therapy Center, Palo Alto, CA &amp; Shanghai Mental Health Center</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Member, American College Counseling Association (since Mar 2024)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Applied Therapist, License #2021121610W10089 — Chinese Psychological Society (since Dec 2021)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Licensed School Psychological Counselor — Shanghai (since Oct 2010)</li>
+        <li style="font-size: 13.5px; color: #444; padding: 0;">Member, Shanghai College Counseling Association (since Oct 2010)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════ PUBLICATIONS ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Publications</div>
+    <ul style="list-style: none; padding: 0; display: grid; gap: 6px;">
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Jin Lyu. "The Cognitive Enhancement Function of Print Media in the Digital Age." <em>Printing Field</em>, 2026(03).</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Jin Lyu. "3W Model: An Exploration of the Ideological and Political Model of Curriculum Under the Framework of '3 All-around Education'—A Case Study of Happiness Psychology in General Education Courses." <em>Journal of Higher Education</em>, 2021.</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Jin Lyu. "The Exploratory Use of Satir Family Therapy Model in College Students' Psychological Problems." <em>Education Teaching Forum</em>, 2020.</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Jin Lyu. "Research on Implementation of '3 All-around Education' Based on Effectiveness of Career Guidance." <em>The Guide of Science &amp; Education</em>, 2020.</li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skill-list">
+      <span class="skill-chip">Teaching &amp; Public Speaking</span>
+      <span class="skill-chip">Curriculum Design &amp; Development</span>
+      <span class="skill-chip">Hybrid &amp; Online Instruction</span>
+      <span class="skill-chip">Student Engagement &amp; Mentoring</span>
+      <span class="skill-chip">Clinical Supervision</span>
+      <span class="skill-chip">DBT &amp; CBT</span>
+      <span class="skill-chip">Crisis Management</span>
+      <span class="skill-chip">Case Management</span>
+      <span class="skill-chip">Social-Emotional Learning (SEL)</span>
+      <span class="skill-chip">AI &amp; Mental Health Integration</span>
+      <span class="skill-chip">AI Agent Development</span>
+      <span class="skill-chip">Python &amp; R</span>
+      <span class="skill-chip">Statistics &amp; Research Methods</span>
+      <span class="skill-chip">Bilingual (English &amp; Mandarin)</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ HONORS ═══════════════ -->
+  <div class="section">
+    <div class="section-title">Honors &amp; Awards</div>
+    <ul style="list-style: none; padding: 0; display: grid; gap: 5px;">
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Equity Mental Health Fellowship — Jan 2025</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Dr. Clara Louise Meyers Outstanding Practicum Student Award — 2025</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Dr. Sun Yat-Sen Scholarship — Aug 2023</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Student Marshall, Brown School, Washington University in St. Louis — May 2023</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Xiuying Wang Master's Research Fellowship — Aug 2022</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">The Brown School Emerging Leaders in Policy Scholarship — Jun 2022</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Ten Year's Devotion Award, Shanghai Mental Health Education — Dec 2020</li>
+      <li style="font-size: 13.5px; color: #444; padding: 0;">Best Teacher Nomination Award, Fudan University — 2013 &amp; 2011</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    Jin Lyu &nbsp;·&nbsp; jin_lyu@163.com &nbsp;·&nbsp; Shanghai, China
+  </div>
+
+</div>
+
+</body>
+</html>
